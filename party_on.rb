@@ -1,0 +1,56 @@
+require 'sinatra'
+require 'rubygems'
+require 'data_mapper'
+require 'sinatra/flash'
+require 'shotgun'
+
+SITE_TITLE = "Mission Guac Party 2013"
+SITE_DESCRIPTION = "WooHoo!"
+
+enable :sessions
+
+DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/partiers.db")
+class Partier
+  include DataMapper::Resource
+  property :id, Serial
+  property :name, Text, :required => true
+  property :email, Text, :required => true
+  property :guacamole, Boolean
+  property :beer, Boolean
+  property :something_else, Boolean
+  property :created_at, DateTime
+  property :updated_at, DateTime
+end
+DataMapper.finalize.auto_upgrade!
+
+
+get '/' do
+  erb :home
+end
+
+get '/signup' do
+  erb :signup
+end
+
+post '/signup' do
+  p = Partier.new
+  p.name = params[:name]
+  p.email = params[:email]
+  p.guacamole = params[:guacamole]
+  p.beer = params[:beer]
+  p.something_else = params[:something_else]
+  p.created_at = Time.now
+  p.updated_at = Time.now
+
+  redirect '/thanks'
+end
+
+get '/thanks' do
+  @partier = Partier.get params[:id]
+  @title = "Edit note #{params[:id]}"
+  if @partier
+    erb :edit
+  else
+    redirect '/', :error => "Can't find that partier!"
+  end
+end
