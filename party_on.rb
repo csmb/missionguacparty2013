@@ -3,7 +3,7 @@ require 'data_mapper'
 
 SITE_TITLE = "Mission Guac Party 2013"
 
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/partiers.db")
+DataMapper.setup(:default, ENV['HEROKU_POSTGRES_OLIVE-URL'])
 class Partier
   include DataMapper::Resource
   property :id, Serial
