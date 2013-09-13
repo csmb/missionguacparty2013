@@ -1,2 +1,2 @@
-require './party_on.rb'
+require './party_on'
 run Sinatra::Application
