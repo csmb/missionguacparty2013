@@ -1,13 +1,4 @@
-require 'sinatra'
-require 'rubygems'
-require 'data_mapper'
-require 'sinatra/flash'
-require 'shotgun'
-
 SITE_TITLE = "Mission Guac Party 2013"
-SITE_DESCRIPTION = "WooHoo!"
-
-enable :sessions
 
 DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/partiers.db")
 class Partier
