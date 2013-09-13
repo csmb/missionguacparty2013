@@ -41,11 +41,12 @@ post '/signup' do
   p.something_else = params[:something_else]
   p.created_at = Time.now
   p.updated_at = Time.now
+  p.save
 
-  redirect '/thanks'
+  redirect "/#{p.id}"
 end
 
-get '/thanks' do
+get '/:id' do
   @partier = Partier.get params[:id]
   if @partier
     erb :confirm
