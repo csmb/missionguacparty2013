@@ -3,7 +3,7 @@ require 'data_mapper'
 
 SITE_TITLE = "Mission Guac Party 2013"
 
-DataMapper.setup(:default, ENV['HEROKU_POSTGRES_OLIVE-URL'])
+DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://#{Dir.pwd}/partiers.db')
 class Partier
   include DataMapper::Resource
   property :id, Serial
