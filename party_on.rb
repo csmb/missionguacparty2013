@@ -43,14 +43,18 @@ post '/signup' do
   p.updated_at = Time.now
   p.save
 
-  redirect "/#{p.id}"
+  redirect "/guacamole_enthusiast/#{p.id}"
 end
 
-get '/:id' do
+get '/guacamole_enthusiast/:id' do
   @partier = Partier.get params[:id]
   if @partier
-    erb :confirm
+    erb :confirmed
   else
-    redirect '/', :error => "Can't find that partier!"
+    redirect '/'
   end
+end
+
+get '/guacamole_enthusiast/' do
+  redirect '/signup'
 end

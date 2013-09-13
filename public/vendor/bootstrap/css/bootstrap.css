@@ -228,6 +228,8 @@ body {
   line-height: 20px;
   color: #333333;
   background-color: #ffffff;
+  background-image:url("/guacamole_blur.jpg");
+  background-size: 1440px 830px;
 }
 
 a {
@@ -3190,7 +3192,8 @@ button.close {
   display: inline-block;
   *display: inline;
   padding: 4px 12px;
-  margin-bottom: 0;
+  opacity: 10;
+  margin-bottom: 10px;
   *margin-left: .3em;
   font-size: 14px;
   line-height: 20px;
@@ -4364,13 +4367,7 @@ input[type="submit"].btn.btn-mini {
   min-height: 40px;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: #fafafa;
-  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
-  background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
-  background-repeat: repeat-x;
+  background-color: #D9FFFC;
   border: 1px solid #d4d4d4;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
@@ -4404,11 +4401,10 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .brand {
   display: block;
-  float: right;
+  text-align: center;
   padding: 10px 20px 10px;
-  margin-left: -20px;
   font-size: 45px;
-  font-weight: 200;
+  font-weight: 100;
   color: #777777;
   text-shadow: 0 1px 0 #ffffff;
 }
@@ -6108,30 +6104,103 @@ a.badge:focus {
   margin-bottom: 0;
 }
 
+@font-face
+{
+  font-family: mission_scipt;
+  src: url('/mission-script.otf');
+}
+
+#instructions {
+  text-align: center;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 15px;
+  width: 220px;
+  display: inline-block;
+}
+
+#contact{
+  font-weight: 300;
+}
+
 .hero-unit {
-  padding: 60px;
-  margin-bottom: 30px;
   font-size: 18px;
   text-align: center;
   font-weight: 200;
   line-height: 30px;
-  color: inherit;
-  background-color: #eeeeee;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
+  background-color: #ffffff;
+  opacity: .85;
+  max-width: 770px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-radius: 45px;
+  padding-top: 10px;
 }
 
 .hero-unit h1 {
-  margin-bottom: 0;
-  font-size: 60px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-size: 32px;
   line-height: 1;
   letter-spacing: -1px;
   color: inherit;
 }
 
-.hero-unit li {
+.hero-unit p {
+  line-height: 22px;
+}
+
+.signup-unit {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 200;
   line-height: 30px;
+  background-color: #ffffff;
+  opacity: .85;
+  max-width: 770px;
+  margin: 0 auto;
+  border-radius: 45px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 70px;
+}
+
+.signup-unit h1 {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: inherit;
+}
+
+.confirmed-unit {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 200;
+  line-height: 30px;
+  background-color: #ffffff;
+  max-width: 770px;
+  margin: 0 auto;
+  border-radius: 45px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 70px;
+}
+
+.confirmed-unit h1 {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: inherit;
+}
+
+#instructions {
+  font-size: 18px;
 }
 
 .pull-right {
