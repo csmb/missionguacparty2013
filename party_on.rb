@@ -47,9 +47,8 @@ end
 
 get '/thanks' do
   @partier = Partier.get params[:id]
-  @title = "Edit note #{params[:id]}"
   if @partier
-    erb :edit
+    erb :confirm
   else
     redirect '/', :error => "Can't find that partier!"
   end
